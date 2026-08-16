@@ -1,0 +1,466 @@
+/* ============================================
+   TOSHIRO BOT — Design tokens
+   ============================================ */
+:root {
+  --ink: #121212;
+  --paper: #ede7dc;
+  --paper-dim: #ddd5c4;
+  --crimson: #a13327;
+  --crimson-soft: #c2483a;
+  --steel: #4a5a5c;
+  --line: rgba(18, 18, 18, 0.14);
+  --line-light: rgba(237, 231, 220, 0.18);
+
+  --font-display: "Shippori Mincho", serif;
+  --font-body: "Noto Sans JP", sans-serif;
+
+  --radius: 2px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Paper grain texture overlay */
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.05;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ============================================
+   Hero
+   ============================================ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 32px 6vw 80px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* ---- LOGO SLOT ----
+   Substitua o conteúdo desta div por sua imagem, ex:
+   <img src="logo.png" alt="Toshiro Bot logo">
+   O container já está dimensionado e estilizado para receber a logo. */
+.logo-slot {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.logo-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.logo-fallback {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--crimson-soft);
+}
+
+.logo-fallback.small {
+  font-size: 18px;
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  font-size: 14px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+}
+
+.nav-links a {
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+  position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  opacity: 1;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 1px;
+  background: var(--crimson-soft);
+  transition: width 0.25s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a:focus-visible::after {
+  width: 100%;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  margin-top: auto;
+  padding-top: 140px;
+  max-width: 720px;
+}
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: var(--crimson-soft);
+  margin-bottom: 22px;
+  font-weight: 500;
+}
+
+.eyebrow.light {
+  color: var(--crimson-soft);
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.6rem, 7vw, 5.2rem);
+  line-height: 1.04;
+  letter-spacing: -0.01em;
+}
+
+.hero-title .line {
+  display: block;
+  opacity: 0;
+  transform: translateY(24px);
+  animation: rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-title .line:nth-child(1) { animation-delay: 0.05s; }
+.hero-title .line:nth-child(2) { animation-delay: 0.18s; }
+.hero-title .line:nth-child(3) { animation-delay: 0.31s; }
+
+.hero-title .accent {
+  color: var(--crimson-soft);
+}
+
+@keyframes rise {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-sub {
+  margin-top: 28px;
+  font-size: 16px;
+  max-width: 460px;
+  color: rgba(237, 231, 220, 0.72);
+}
+
+.hero-actions {
+  margin-top: 40px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: var(--crimson);
+  color: var(--paper);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: var(--crimson-soft);
+}
+
+.btn-ghost {
+  border-color: var(--line-light);
+  color: var(--paper);
+}
+
+.btn-ghost:hover,
+.btn-ghost:focus-visible {
+  border-color: var(--paper);
+}
+
+.btn-large {
+  padding: 18px 40px;
+  font-size: 14px;
+}
+
+.hero-mark {
+  position: absolute;
+  right: -3vw;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-display);
+  font-size: 42vw;
+  line-height: 1;
+  color: var(--paper);
+  opacity: 0.035;
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ============================================
+   Sections
+   ============================================ */
+.section {
+  padding: 120px 6vw;
+}
+
+.section-head {
+  max-width: 640px;
+  margin: 0 auto 64px;
+  text-align: center;
+}
+
+.section-head h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin-top: 12px;
+}
+
+/* Kata (features) grid */
+.kata-grid {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+.kata-card {
+  background: var(--paper);
+  padding: 48px 36px;
+  transition: background 0.3s ease;
+}
+
+.kata-card:hover {
+  background: var(--paper-dim);
+}
+
+.kata-mark {
+  font-family: var(--font-display);
+  font-size: 34px;
+  color: var(--crimson);
+  display: block;
+  margin-bottom: 20px;
+}
+
+.kata-card h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.kata-card p {
+  font-size: 14px;
+  color: rgba(18, 18, 18, 0.65);
+}
+
+/* Dark commands section */
+.section-dark {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.command-list {
+  max-width: 720px;
+  margin: 0 auto;
+  border-top: 1px solid var(--line-light);
+}
+
+.command-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+  padding: 22px 4px;
+  border-bottom: 1px solid var(--line-light);
+}
+
+.command-list code {
+  font-family: "Courier New", monospace;
+  font-size: 15px;
+  color: var(--crimson-soft);
+  min-width: 100px;
+  flex-shrink: 0;
+}
+
+.cmd-desc {
+  font-size: 14px;
+  color: rgba(237, 231, 220, 0.7);
+}
+
+/* CTA */
+.cta-section {
+  padding: 100px 6vw 140px;
+}
+
+.cta-box {
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cta-mark {
+  font-family: var(--font-display);
+  font-size: 40px;
+  color: var(--crimson);
+  display: block;
+  margin-bottom: 18px;
+}
+
+.cta-box h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
+  margin-bottom: 14px;
+}
+
+.cta-box p {
+  font-size: 15px;
+  color: rgba(18, 18, 18, 0.65);
+  margin-bottom: 36px;
+}
+
+/* Footer */
+.footer {
+  background: var(--ink);
+  color: rgba(237, 231, 220, 0.6);
+  padding: 40px 6vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  letter-spacing: 0.12em;
+  color: var(--paper);
+  font-size: 13px;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 800px) {
+  .nav-links {
+    display: none;
+  }
+
+  .kata-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content {
+    padding-top: 100px;
+  }
+
+  .command-list li {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
