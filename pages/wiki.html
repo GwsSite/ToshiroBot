@@ -1,0 +1,2739 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wiki — Toshiro Bot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/wiki.css">
+</head>
+<body>
+
+  <div class="grain"></div>
+
+  <!-- ============ TOPBAR ============ -->
+  <header class="topbar">
+    <div class="topbar-brand">
+      <div class="logo-slot">
+        <span class="logo-fallback">刀</span>
+      </div>
+      <span class="brand-name">TOSHIRO <span class="brand-sub">/ wiki</span></span>
+    </div>
+
+    <div class="search-wrap">
+      <input type="text" id="search-input" class="search-input" placeholder="Buscar comando..." autocomplete="off">
+      <span class="search-key">/</span>
+    </div>
+
+    <a href="#" class="topbar-link">Site principal</a>
+  </header>
+
+  <div class="wiki-layout">
+
+    <!-- ============ SIDEBAR ============ -->
+    <aside class="sidebar" id="sidebar">
+      <nav>
+        <p class="sidebar-label">巻 · Índice</p>
+        <ul class="sidebar-list">
+          <li><a href="#introducao" class="sidebar-link active">Introdução</a></li>
+          <li><a href="#permissoes" class="sidebar-link">Permissões</a></li>
+        </ul>
+
+        <p class="sidebar-label">章 · Categorias</p>
+        <ul class="sidebar-list">
+          <li><a href="#ajuda" class="sidebar-link">Ajuda</a></li>
+          <li><a href="#economia" class="sidebar-link">Economia</a></li>
+          <li><a href="#jogos" class="sidebar-link">Jogos</a></li>
+          <li><a href="#cripto" class="sidebar-link">Criptomoedas</a></li>
+          <li><a href="#afiliado" class="sidebar-link">Afiliados</a></li>
+          <li><a href="#vip" class="sidebar-link">VIP</a></li>
+          <li><a href="#loja" class="sidebar-link">Loja</a></li>
+          <li><a href="#perfil" class="sidebar-link">Perfil</a></li>
+          <li><a href="#sorteios" class="sidebar-link">Sorteios</a></li>
+          <li><a href="#leiloes" class="sidebar-link">Leilões</a></li>
+          <li><a href="#mensagens" class="sidebar-link">Mensagens</a></li>
+          <li><a href="#boas-vindas" class="sidebar-link">Boas-vindas</a></li>
+          <li><a href="#moderacao" class="sidebar-link">Moderação</a></li>
+          <li><a href="#admin" class="sidebar-link">Administração</a></li>
+          <li><a href="#logs" class="sidebar-link">Logs</a></li>
+          <li><a href="#reaction" class="sidebar-link">Reaction Roles</a></li>
+          <li><a href="#call" class="sidebar-link">Call 24/7</a></li>
+          <li><a href="#outros" class="sidebar-link">Outros</a></li>
+        </ul>
+
+        <p class="sidebar-label">補 · Extras</p>
+        <ul class="sidebar-list">
+          <li><a href="#faq" class="sidebar-link">Perguntas frequentes</a></li>
+          <li><a href="#changelog" class="sidebar-link">Changelog</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- ============ CONTEÚDO ============ -->
+    <main class="content">
+
+      <!-- ===== INTRODUÇÃO ===== -->
+      <section id="introducao" class="doc-section">
+        <p class="doc-eyebrow">— 序 jo · abertura</p>
+        <h1>Wiki do Toshiro Bot</h1>
+        <p class="doc-lead">
+          Este é o registro completo de comandos do Toshiro. Cada entrada segue o mesmo formato:
+          o que o comando faz e como escrevê-lo corretamente.
+        </p>
+
+        <div class="callout">
+          <strong>Como ler esta wiki</strong>
+          <p>Comandos aparecem como <code>/exemplo</code>. Parâmetros obrigatórios estão em <code>&lt;colchetes&gt;</code>, opcionais em <code>[colchetes]</code>.</p>
+        </div>
+      </section>
+
+      <!-- ===== PERMISSÕES ===== -->
+      <section id="permissoes" class="doc-section">
+        <h2><span class="section-mark">許</span> Permissões</h2>
+        <p>Cada comando exige um nível mínimo de permissão no servidor.</p>
+
+        <table class="perm-table">
+          <thead>
+            <tr>
+              <th>Nível</th>
+              <th>Selo</th>
+              <th>Quem pode usar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Todos</td>
+              <td><span class="badge badge-all">Todos</span></td>
+              <td>Qualquer membro do servidor</td>
+            </tr>
+            <tr>
+              <td>Moderador</td>
+              <td><span class="badge badge-mod">Mod</span></td>
+              <td>Cargos com permissão de gerenciar mensagens ou membros</td>
+            </tr>
+            <tr>
+              <td>Administrador</td>
+              <td><span class="badge badge-admin">Admin</span></td>
+              <td>Cargos com permissão de administrador</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ===== CATEGORIAS ===== -->
+      <section id="categorias" class="doc-section">
+        <h2><span class="section-mark">目</span> Categorias</h2>
+        <div class="category-grid">
+          <div class="category-card" onclick="document.getElementById('ajuda').scrollIntoView({behavior:'smooth'})">
+            <h3>📚 Ajuda</h3>
+            <p>Comandos de informação e suporte</p>
+            <span class="count">8 comandos</span>
+          </div>
+          <div class="category-card" onclick="document.getElementById('economia').scrollIntoView({behavior:'smooth'})">
+            <h3>💰 Economia</h3>
+            <p>Drexy Gold, trabalhos e ranking</p>
+            <span class="count">22 comandos</span>
+          </div>
+          <div class="category-card" onclick="document.getElementById('jogos').scrollIntoView({behavior:'smooth'})">
+            <h3>🎰 Jogos</h3>
+            <p>Apostas, TDC, Detective e mais</p>
+            <span class="count">32 comandos</span>
+          </div>
+          <div class="category-card" onclick="document.getElementById('cripto').scrollIntoView({behavior:'smooth'})">
+            <h3>💎 Criptomoedas</h3>
+            <p>Mercado, compra e mineração</p>
+            <span class="count">6 comandos</span>
+          </div>
+          <div class="category-card" onclick="document.getElementById('afiliado').scrollIntoView({behavior:'smooth'})">
+            <h3>🤝 Afiliados</h3>
+            <p>Links exclusivos e estatísticas</p>
+            <span class="count">3 comandos</span>
+          </div>
+          <div class="category-card" onclick="document.getElementById('vip').scrollIntoView({behavior:'smooth'})">
+            <h3>👑 VIP</h3>
+            <p>Planos, ativação e recompensas</p>
+            <span class="count">9 comandos</span>
+          </div>
+          <div class="category-card" onclick="document.getElementById('loja').scrollIntoView({behavior:'smooth'})">
+            <h3>🛒 Loja</h3>
+            <p>Cargos e itens para comprar</p>
+            <span class="count">3 comandos</span>
+          </div>
+          <div class="category-card" onclick="document.getElementById('perfil').scrollIntoView({behavior:'smooth'})">
+            <h3>👤 Perfil</h3>
+            <p>Personalização, reputação e social</p>
+            <span class="count">30+ comandos</span>
+          </div>
+          <div class="category-card" onclick="document.getElementById('sorteios').scrollIntoView({behavior:'smooth'})">
+            <h3>🎁 Sorteios</h3>
+            <p>Criação e participação em sorteios</p>
+            <span class="count">8 comandos</span>
+          </div>
+          <div class="category-card" onclick="document.getElementById('leiloes').scrollIntoView({behavior:'smooth'})">
+            <h3>🔨 Leilões</h3>
+            <p>Criação e gestão de leilões</p>
+            <span class="count">8 comandos</span>
+          </div>
+          <div class="category-card" onclick="document.getElementById('mensagens').scrollIntoView({behavior:'smooth'})">
+            <h3>📢 Mensagens</h3>
+            <p>Anúncios e divulgação</p>
+            <span class="count">18 comandos</span>
+          </div>
+          <div class="category-card" onclick="document.getElementById('boas-vindas').scrollIntoView({behavior:'smooth'})">
+            <h3>👋 Boas-vindas</h3>
+            <p>Sistema de entrada de membros</p>
+            <span class="count">10 comandos</span>
+          </div>
+          <div class="category-card" onclick="document.getElementById('moderacao').scrollIntoView({behavior:'smooth'})">
+            <h3>🛡️ Moderação</h3>
+            <p>Ban, kick, warn e limpeza</p>
+            <span class="count">24 comandos</span>
+          </div>
+          <div class="category-card" onclick="document.getElementById('admin').scrollIntoView({behavior:'smooth'})">
+            <h3>⚙️ Administração</h3>
+            <p>Servidor, canais e cargos</p>
+            <span class="count">40+ comandos</span>
+          </div>
+          <div class="category-card" onclick="document.getElementById('logs').scrollIntoView({behavior:'smooth'})">
+            <h3>📝 Logs</h3>
+            <p>Registros e automações</p>
+            <span class="count">8 comandos</span>
+          </div>
+          <div class="category-card" onclick="document.getElementById('reaction').scrollIntoView({behavior:'smooth'})">
+            <h3>🎯 Reaction Roles</h3>
+            <p>Painéis de cargos por reação</p>
+            <span class="count">6 comandos</span>
+          </div>
+          <div class="category-card" onclick="document.getElementById('call').scrollIntoView({behavior:'smooth'})">
+            <h3>📞 Call 24/7</h3>
+            <p>Bot em call permanente</p>
+            <span class="count">4 comandos</span>
+          </div>
+          <div class="category-card" onclick="document.getElementById('outros').scrollIntoView({behavior:'smooth'})">
+            <h3>🧠 Outros</h3>
+            <p>Mente, logo, tags, emoji e mais</p>
+            <span class="count">18 comandos</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== AJUDA ===== -->
+      <section id="ajuda" class="doc-section">
+        <h2><span class="section-mark">📚</span> Ajuda e informações</h2>
+        <p class="doc-lead">Comandos para obter informações e suporte.</p>
+
+        <div class="cmd-group">
+          <h3>Informações <span class="count-badge">11 comandos</span></h3>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/help</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Mostra a central de ajuda do Toshiro e os comandos disponíveis.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/ping</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Verifica se o bot está respondendo e mostra a latência.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/botstatus</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Mostra informações de desempenho/status do bot.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/serverinfo</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Exibe informações do servidor, como membros e dados gerais.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/userinfo</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Mostra informações de um usuário.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/avatar</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Mostra o avatar de um usuário.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/invite</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Gera/mostra o convite do Toshiro Bot.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/creator</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Mostra o criador e a equipe do bot. Subcomandos: <code>info</code>, <code>add</code>, <code>easteregg</code>.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/registrar</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Sistema de registro do usuário no bot.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/feedback</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Permite enviar feedback sobre o Toshiro.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/report</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Reporta bugs ou problemas encontrados no bot.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== ECONOMIA ===== -->
+      <section id="economia" class="doc-section">
+        <h2><span class="section-mark">💰</span> Drexy Gold / Economia</h2>
+        <p class="doc-lead">Sistema econômico completo com moeda própria.</p>
+
+        <div class="cmd-group">
+          <h3>Saldo e transações <span class="count-badge">5 comandos</span></h3>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/saldo</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Mostra o saldo de Drexy Gold de um usuário.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/carteira</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Mostra informações financeiras/econômicas da carteira.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/daily</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Resgata a recompensa diária em Drexy Gold.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/ranking</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Mostra o ranking de usuários com mais Drexy Gold.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/historico</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Consulta o histórico de movimentações.</p>
+          </article>
+        </div>
+
+        <div class="cmd-group">
+          <h3>Trabalhos <span class="count-badge">6 comandos</span></h3>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/trabalhar iniciar</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Inicia um trabalho.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/trabalhar status</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Mostra o trabalho atual.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/trabalhar parar</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Para o trabalho.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/trabalhar receber</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Recebe o pagamento do trabalho.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/trabalhar bolsafamilia</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Sistema de benefício/recompensa.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/trabalhar empregos</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Lista os empregos disponíveis.</p>
+          </article>
+        </div>
+
+        <div class="cmd-group">
+          <h3>Administração Drexy <span class="count-badge">8 comandos</span></h3>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/drexy add</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Adiciona Drexy Gold a um usuário.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/drexy remove</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Remove Drexy Gold.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/drexy set</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Define o saldo de Drexy Gold.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/drexy reset</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Reseta a economia de um usuário.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/drexy azar</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Sistema relacionado à sorte/azar.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/drexy sorte</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Sistema de sorte.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/drexy luckreset</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Reseta os dados de sorte.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/drexy info</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Mostra informações da economia/Drexy.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== JOGOS ===== -->
+      <section id="jogos" class="doc-section">
+        <h2><span class="section-mark">🎰</span> Jogos e apostas</h2>
+        <p class="doc-lead">Entretenimento e apostas com Drexy Gold.</p>
+
+        <div class="cmd-group">
+          <h3>Apostas <span class="count-badge">9 comandos</span></h3>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/apostar moeda</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Cara ou coroa.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/apostar dado</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Aposta em um resultado de dado.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/apostar roleta</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Joga roleta apostando Drexy Gold.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/apostar slot</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Máquina de caça-níquel.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/apostar blackjack</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Joga Blackjack.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/apostar raspadinha</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Joga raspadinha.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/apostar stats</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Mostra estatísticas de apostas.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/dado</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Rola um dado com quantidade de lados definida.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/calc</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Faz cálculos matemáticos.</p>
+          </article>
+        </div>
+
+        <div class="cmd-group">
+          <h3>TDC (Jogo da Morte) <span class="count-badge">11 comandos</span></h3>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/tdc criar</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Cria uma partida.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/tdc entrar</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Entra na partida atual.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/tdc sair</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Sai da partida.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/tdc iniciar</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Inicia a partida.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/tdc matar</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Executa uma ação de eliminação dentro do jogo.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/tdc reportar</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Reporta um jogador.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/tdc emergencia</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Ativa a reunião/emergência.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/tdc votar</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Participa da votação.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/tdc tarefa</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Interage com tarefas.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/tdc placar</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Mostra o placar.</p>
+          </article>
+        </div>
+
+        <div class="cmd-group">
+          <h3>Detective <span class="count-badge">3 comandos</span></h3>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/detective analisar</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Analisa um usuário.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/detective scan</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Faz uma investigação/scan.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/detective stats</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Mostra estatísticas do sistema.</p>
+          </article>
+        </div>
+
+        <div class="cmd-group">
+          <h3>Outros jogos <span class="count-badge">2 comandos</span></h3>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/preverfuturo</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Faz uma previsão divertida sobre o futuro de um usuário.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/ship</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Calcula a compatibilidade entre usuários e possui sistema de ranking.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== CRIPTO ===== -->
+      <section id="cripto" class="doc-section">
+        <h2><span class="section-mark">💎</span> Criptomoedas</h2>
+        <p class="doc-lead">Compre, venda e mine criptomoedas.</p>
+
+        <div class="cmd-group">
+          <h3>Comandos <span class="count-badge">6 comandos</span></h3>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/crypto mercado</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Mostra o mercado de criptomoedas.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/crypto comprar</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Compra uma criptomoeda usando Drexy Gold.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/crypto vender</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Vende uma criptomoeda.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/crypto carteira</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Mostra suas criptomoedas.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/crypto minerar</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Minera DrexyCoin.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/crypto reset</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Reseta as criptomoedas de um usuário ou do sistema.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== AFILIADO ===== -->
+      <section id="afiliado" class="doc-section">
+        <h2><span class="section-mark">🤝</span> Afiliados</h2>
+        <p class="doc-lead">Sistema de indicação e recompensas.</p>
+
+        <div class="cmd-group">
+          <h3>Comandos <span class="count-badge">3 comandos</span></h3>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/afiliado link</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Cria seu link exclusivo de afiliado.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/afiliado stats</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Mostra suas estatísticas de afiliado.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/afiliado linkscheck</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Permite ao dono verificar os links de afiliado de um usuário.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== VIP ===== -->
+      <section id="vip" class="doc-section">
+        <h2><span class="section-mark">👑</span> VIP</h2>
+        <p class="doc-lead">Planos exclusivos e benefícios.</p>
+
+        <div class="cmd-group">
+          <h3>Usuário <span class="count-badge">4 comandos</span></h3>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/vip status</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Mostra o status do seu VIP.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/vip planos</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Mostra os planos VIP disponíveis.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/vip ativar</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Ativa um VIP.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/vip remover</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Remove um VIP.</p>
+          </article>
+        </div>
+
+        <div class="cmd-group">
+          <h3>Administração <span class="count-badge">5 comandos</span></h3>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/vipuser dar</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Dá um VIP para um usuário.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/vipuser remover</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Remove o VIP de um usuário.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/vipuser ver</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Consulta o VIP de um usuário.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/vipuser planos</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Mostra os planos disponíveis.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/vipuser recompensa</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Resgata a recompensa diária de VIP.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== LOJA ===== -->
+      <section id="loja" class="doc-section">
+        <h2><span class="section-mark">🛒</span> Loja</h2>
+        <p class="doc-lead">Compre cargos e itens com Drexy Gold.</p>
+
+        <div class="cmd-group">
+          <h3>Comandos <span class="count-badge">3 comandos</span></h3>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/loja cargos</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Mostra os cargos disponíveis para compra.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/loja comprar</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Compra um cargo usando Drexy Gold.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/comprar</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Compra itens/recompensas disponíveis no sistema.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== PERFIL ===== -->
+      <section id="perfil" class="doc-section">
+        <h2><span class="section-mark">👤</span> Perfil e social</h2>
+        <p class="doc-lead">Personalize seu perfil e interaja socialmente.</p>
+
+        <div class="cmd-group">
+          <h3>Perfil <span class="count-badge">12 comandos</span></h3>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/perfil ver</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Visualiza o perfil de um usuário.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/perfil editar</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Edita informações do perfil.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/perfil bio</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Altera a biografia.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/perfil status</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Define/consulta o status.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/perfil cor</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Personaliza a cor do perfil.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/perfil banner</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Configura o banner.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/perfil xp</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Mostra informações de XP.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/perfil ranking</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Mostra posição no ranking.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/perfil conquistas</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Mostra conquistas.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/perfil inv</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Abre o inventário.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/perfil privacidade</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Configura privacidade.</p>
+          </article>
+        </div>
+
+        <div class="cmd-group">
+          <h3>Social <span class="count-badge">4 comandos</span></h3>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/perfil casar</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Inicia sistema de casamento.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/perfil divorciar</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Encerra o casamento.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/perfil amigo</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Sistema de amizade.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/perfil reputacao</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Mostra reputação.</p>
+          </article>
+        </div>
+
+        <div class="cmd-group">
+          <h3>Reputação <span class="count-badge">5 comandos</span></h3>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/reputacao ver</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Consulta reputação.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/reputacao elogiar</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Dá reputação/elogio a outro usuário.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/reputacao reportar</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Reporta um usuário no sistema de reputação.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/reputacao ranking</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Mostra o ranking de reputação.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/reputacao reset</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Reseta a reputação de um usuário, função administrativa.</p>
+          </article>
+        </div>
+
+        <div class="cmd-group">
+          <h3>Casamento <span class="count-badge">3 comandos</span></h3>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/casamento pedir</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Faz um pedido de casamento.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/casamento divorciar</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Divorcia.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/casamento status</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Mostra o status do relacionamento.</p>
+          </article>
+        </div>
+
+        <div class="cmd-group">
+          <h3>AFK <span class="count-badge">6 comandos</span></h3>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/afk ativar</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Ativa seu status AFK.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/afk desativar</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Remove o AFK.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/afk perfil</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Mostra informações do AFK.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/afk ranking</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Ranking de usuários AFK.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/afk stats</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Estatísticas AFK.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/afk badges</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Mostra badges/conquistas relacionadas.</p>
+          </article>
+        </div>
+
+        <div class="cmd-group">
+          <h3>XP <span class="count-badge">5 comandos</span></h3>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/xp ver</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Mostra XP de um usuário.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/xp ranking</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Ranking de XP.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/xp prestige</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Sistema de prestígio.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/xp config</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Configura o sistema de XP.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/inventario</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Mostra o inventário de um usuário.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== SORTEIOS ===== -->
+      <section id="sorteios" class="doc-section">
+        <h2><span class="section-mark">🎁</span> Sorteios e eventos</h2>
+        <p class="doc-lead">Crie e participe de sorteios e eventos.</p>
+
+        <div class="cmd-group">
+          <h3>Sorteios <span class="count-badge">3 comandos</span></h3>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/sorteio criar</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Cria um sorteio.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/sorteio encerrar</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Encerra o sorteio.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/sorteio rerolar</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Realiza um novo sorteio entre os participantes.</p>
+          </article>
+        </div>
+
+        <div class="cmd-group">
+          <h3>Eventos <span class="count-badge">5 comandos</span></h3>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/evento criar</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Cria um evento.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/evento listar</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Lista eventos.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/evento participar</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Participa de um evento.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/evento remover</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Remove participação.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/enquete</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Cria uma enquete para o servidor.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== LEILÕES ===== -->
+      <section id="leiloes" class="doc-section">
+        <h2><span class="section-mark">🔨</span> Leilões</h2>
+        <p class="doc-lead">Sistema completo de leilões.</p>
+
+        <div class="cmd-group">
+          <h3>Comandos <span class="count-badge">7 comandos</span></h3>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/leilao criar</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Cria um leilão com recompensa e lance inicial.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/leilao dar</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Dá um lance em um leilão.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/leilao finalizar</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Finaliza o leilão.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/leilao cancelar</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Cancela o leilão.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/leilao listar</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Lista os leilões ativos.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/leilao info</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Mostra informações de um leilão.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/leilao canal</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Define o canal de anúncios dos leilões.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== MENSAGENS ===== -->
+      <section id="mensagens" class="doc-section">
+        <h2><span class="section-mark">📢</span> Mensagens e anúncios</h2>
+        <p class="doc-lead">Sistema completo de envio de mensagens.</p>
+
+        <div class="cmd-group">
+          <h3>Mensagens <span class="count-badge">7 comandos</span></h3>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/msg</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Envia uma mensagem através do bot.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/say texto</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Envia texto simples.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/say embed</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Envia uma mensagem em embed personalizada.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/say formulario</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Cria mensagem através de formulário.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/say anuncio</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Cria um anúncio.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/say editar</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Edita uma mensagem enviada pelo sistema.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/say deletar</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Exclui uma mensagem do sistema.</p>
+          </article>
+        </div>
+
+        <div class="cmd-group">
+          <h3>Anúncios <span class="count-badge">7 comandos</span></h3>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/anunciar formulario</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Abre formulário para criar anúncio.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/anunciar rapido</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Cria anúncio rapidamente.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/anunciar agendado</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Agenda anúncios automáticos/repetitivos.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/anuncios listar</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Lista anúncios configurados.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/anuncios pausar</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Pausa anúncio.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/anuncios deletar</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Exclui anúncio.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/anuncios executar</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Executa anúncio.</p>
+          </article>
+        </div>
+
+        <div class="cmd-group">
+          <h3>Divulgação <span class="count-badge">4 comandos</span></h3>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/divulgar enviar</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Envia uma divulgação.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/divulgar listar</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Lista divulgações.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/divulgar aprovar</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Aprova uma divulgação.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/divulgar remover</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Remove uma divulgação.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== BOAS-VINDAS ===== -->
+      <section id="boas-vindas" class="doc-section">
+        <h2><span class="section-mark">👋</span> Sistema de boas-vindas</h2>
+        <p class="doc-lead">Configure a entrada de novos membros.</p>
+
+        <div class="cmd-group">
+          <h3>Comandos <span class="count-badge">10 comandos</span></h3>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/welcome configurar</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Configura o sistema de boas-vindas.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/welcome mensagem</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Define a mensagem de entrada.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/welcome embed</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Personaliza o embed.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/welcome dm</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Configura mensagem privada para novos membros.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/welcome autorole</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Define cargo automático.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/welcome status</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Mostra o status do sistema.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/welcome testar</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Testa a mensagem.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/welcome variaveis</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Mostra as variáveis disponíveis.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/welcome info</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Mostra as configurações atuais.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== MODERAÇÃO ===== -->
+      <section id="moderacao" class="doc-section">
+        <h2><span class="section-mark">🛡️</span> Moderação</h2>
+        <p class="doc-lead">Ferramentas para manter a ordem.</p>
+
+        <div class="cmd-group">
+          <h3>Punições <span class="count-badge">9 comandos</span></h3>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/mod ban</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Bane um usuário.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/mod kick</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Expulsa um usuário.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/mod timeout</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Coloca usuário em timeout.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/mod untimeout</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Remove timeout.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/mod warn</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Adverte usuário.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/mod warns</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Consulta advertências.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/mod clearwarns</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Remove advertências.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/mod quarentena</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Coloca usuário em quarentena.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/mod check</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Verifica informações/moderação do usuário.</p>
+          </article>
+        </div>
+
+        <div class="cmd-group">
+          <h3>Configuração <span class="count-badge">3 comandos</span></h3>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/mod config</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Configura o sistema de moderação.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/mod toggle</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Ativa/desativa recursos de moderação.</p>
+          </article>
+        </div>
+
+        <div class="cmd-group">
+          <h3>Canais <span class="count-badge">2 comandos</span></h3>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/lock</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Tranca um canal.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/unlock</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Destranca um canal.</p>
+          </article>
+        </div>
+
+        <div class="cmd-group">
+          <h3>Limpeza <span class="count-badge">8 comandos</span></h3>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/purge</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Apaga determinada quantidade de mensagens.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/clear tudo</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Limpa mensagens.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/clear bots</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Remove mensagens de bots.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/clear usuarios</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Remove mensagens de usuários.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/clear usuario</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Remove mensagens de um usuário específico.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/clear embeds</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Remove mensagens com embeds.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/clear links</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Remove mensagens com links.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/clear mencoes</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Remove mensagens com menções.</p>
+          </article>
+        </div>
+
+        <div class="cmd-group">
+          <h3>Controle <span class="count-badge">3 comandos</span></h3>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/slowmode</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Configura o modo lento de um canal.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/spam delete</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Remove mensagens repetidas/spam.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/spam reset</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Reseta o sistema de controle de spam.</p>
+          </article>
+        </div>
+
+        <div class="cmd-group">
+          <h3>Voz <span class="count-badge">4 comandos</span></h3>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/voice kick</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Expulsa usuário de uma call.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/voice mute</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Silencia usuário.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/voice unmute</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Remove silêncio.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/voice move</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Move usuário de canal de voz.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== ADMINISTRAÇÃO ===== -->
+      <section id="admin" class="doc-section">
+        <h2><span class="section-mark">⚙️</span> Administração do servidor</h2>
+        <p class="doc-lead">Controle total sobre o servidor.</p>
+
+        <div class="cmd-group">
+          <h3>Servidor <span class="count-badge">12 comandos</span></h3>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/server lock</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Tranca canal.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/server unlock</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Destranca canal.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/server lockall</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Tranca canais.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/server unlockall</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Destranca canais.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/server slowmode</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Configura slowmode.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/server purge</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Limpa mensagens.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/server info</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Informações do servidor.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/server icon</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Gerencia/consulta ícone.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/server banner</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Gerencia/consulta banner.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/server voicekick</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Expulsa usuário de call.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/server voicemute</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Silencia usuário.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/server voiceunmute</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Remove mute.</p>
+          </article>
+        </div>
+
+        <div class="cmd-group">
+          <h3>Canais <span class="count-badge">4 comandos</span></h3>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/channel move</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Move canal de categoria.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/channel clone</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Clona canal.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/channel rename</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Renomeia canal.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/channel delete</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Exclui canal.</p>
+          </article>
+        </div>
+
+        <div class="cmd-group">
+          <h3>Cargos <span class="count-badge">21 comandos</span></h3>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/cargo criar</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Cria cargo.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/cargo excluir</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Exclui cargo.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/cargo editar</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Edita cargo.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/cargo adicionar</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Adiciona cargo a usuário.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/cargo remover</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Remove cargo.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/cargo adicionarid</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Adiciona cargo utilizando ID.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/cargo removerid</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Remove cargo utilizando ID.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/cargo todos</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Adiciona cargo a todos.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/cargo removertodos</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Remove cargo de todos.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/cargo listar</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Lista cargos.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/cargo info</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Mostra informações do cargo.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/cargo renomear</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Renomeia cargo.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/cargo cor</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Altera cor.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/cargo icone</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Configura ícone.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/cargo mencao</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Configura menção.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/cargo exibir</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Configura exibição.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/cargo posicao</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Consulta posição.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/cargo mover</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Move posição do cargo.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/cargo duplicar</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Duplica cargo.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/cargo automatico</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Configura cargo automático.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/cargo auto-remover</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Configura remoção automática.</p>
+          </article>
+        </div>
+
+        <div class="cmd-group">
+          <h3>Role e nick <span class="count-badge">5 comandos</span></h3>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/role all</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Dá cargo para todos.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/role humans</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Dá cargo para usuários humanos.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/role bots</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Dá cargo para bots.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/role remove</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Remove cargo.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/nick</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Altera o apelido de um usuário.</p>
+          </article>
+        </div>
+
+        <div class="cmd-group">
+          <h3>Setchannel <span class="count-badge">3 comandos</span></h3>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/setchannel msg</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Define canal de mensagens.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/setchannel logs</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Define canal de logs.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/setchannel welcome</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Define canal de boas-vindas.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== LOGS ===== -->
+      <section id="logs" class="doc-section">
+        <h2><span class="section-mark">📝</span> Logs e automações</h2>
+        <p class="doc-lead">Registros e automações do servidor.</p>
+
+        <div class="cmd-group">
+          <h3>Logs <span class="count-badge">3 comandos</span></h3>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/logs msg</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Ativa logs de mensagens.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/logs remover</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Remove configuração de logs.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/logs listar</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Lista canais/configurações de logs.</p>
+          </article>
+        </div>
+
+        <div class="cmd-group">
+          <h3>Autodelete <span class="count-badge">4 comandos</span></h3>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/autodelete ativar</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Ativa exclusão automática.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/autodelete desativar</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Desativa.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/autodelete remover</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Remove configuração.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/autodelete listar</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Lista configurações.</p>
+          </article>
+        </div>
+
+        <div class="cmd-group">
+          <h3>Membercounter <span class="count-badge">4 comandos</span></h3>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/membercounter criar</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Cria contador de membros.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/membercounter remover</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Remove contador.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/membercounter status</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Mostra status.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/membercounter atualizar</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Atualiza contador.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== REACTION ROLES ===== -->
+      <section id="reaction" class="doc-section">
+        <h2><span class="section-mark">🎯</span> Reaction Roles</h2>
+        <p class="doc-lead">Painéis de cargos por reação.</p>
+
+        <div class="cmd-group">
+          <h3>Comandos <span class="count-badge">6 comandos</span></h3>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/reactionrole criar</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Cria painel de cargos por reação.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/reactionrole adicionar</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Adiciona cargo e emoji ao painel.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/reactionrole remover</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Remove cargo do painel.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/reactionrole deletar</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Exclui painel.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/reactionrole listar</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Lista painéis.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/reactionrole info</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Mostra informações de um painel.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== CALL 24/7 ===== -->
+      <section id="call" class="doc-section">
+        <h2><span class="section-mark">📞</span> Call 24/7</h2>
+        <p class="doc-lead">Mantenha o bot em call permanentemente.</p>
+
+        <div class="cmd-group">
+          <h3>Comandos <span class="count-badge">4 comandos</span></h3>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/setcall fixo</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Mantém o bot conectado permanentemente a uma call.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/setcall temporario</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Mantém o bot em uma call por determinado período.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/setcall desconectar</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Desconecta o bot.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/setcall status</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Mostra o status atual da call.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== OUTROS ===== -->
+      <section id="outros" class="doc-section">
+        <h2><span class="section-mark">🧠</span> Outros sistemas</h2>
+        <p class="doc-lead">Sistemas diversos do Toshiro.</p>
+
+        <div class="cmd-group">
+          <h3>Comandos <span class="count-badge">22 comandos</span></h3>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/mente</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Sistema de interação/IA e funcionalidades relacionadas à "mente" do bot.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/logo gerar</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Gera uma logo.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/logo upload</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Faz upload de uma logo.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/logo ver</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Visualiza logos.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/tag criar</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Cria uma tag.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/tag usuario</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Associa/consulta tag de usuário.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/tag remover</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Remove associação.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/tag deletar</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Exclui tag.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/tag listar</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Lista tags.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/tag info</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Mostra informações da tag.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/emoji info</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Mostra informações de um emoji.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/emoji add</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Adiciona emoji.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/lembrete</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Cria lembretes.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/pix</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Sistema relacionado a pagamentos/Pix.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/manutencao iniciar</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Ativa modo manutenção.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/manutencao finalizar</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Finaliza manutenção.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/manutencao status</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Consulta estado da manutenção.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/restart</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Reinicia o bot.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/reload</code>
+              <span class="badge badge-admin">Admin</span>
+            </div>
+            <p>Recarrega configurações/comandos.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/loja</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Sistema de loja.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/feedback</code>
+              <span class="badge badge-all">Todos</span>
+            </div>
+            <p>Envia avaliação ou sugestão.</p>
+          </article>
+
+          <article class="cmd-entry">
+            <div class="cmd-head">
+              <code>/reembolsar</code>
+              <span class="badge badge-mod">Mod</span>
+            </div>
+            <p>Processa sistema de reembolso.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== FAQ ===== -->
+      <section id="faq" class="doc-section">
+        <h2>Perguntas frequentes</h2>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            O Toshiro funciona com comandos de barra ou de texto?
+          </button>
+          <div class="faq-answer">
+            <p>Ambos. Todos os comandos desta wiki funcionam como comandos de barra (<code>/comando</code>).</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Preciso de permissão especial para convidar o bot?
+          </button>
+          <div class="faq-answer">
+            <p>Sim, é necessário ter a permissão de "Gerenciar servidor" na conta que fizer o convite.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Como reporto um bug ou sugiro um comando novo?
+          </button>
+          <div class="faq-answer">
+            <p>Use o canal de suporte no servidor oficial do Toshiro, disponível no site principal.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== CHANGELOG ===== -->
+      <section id="changelog" class="doc-section">
+        <h2>Changelog</h2>
+
+        <ul class="changelog-list">
+          <li>
+            <span class="changelog-version">v3.0</span>
+            <span class="changelog-text">Nova wiki com todos os comandos documentados.</span>
+          </li>
+          <li>
+            <span class="changelog-version">v2.3</span>
+            <span class="changelog-text">Adicionado sistema de economia e jogos.</span>
+          </li>
+          <li>
+            <span class="changelog-version">v2.0</span>
+            <span class="changelog-text">Migração completa para comandos de barra.</span>
+          </li>
+          <li>
+            <span class="changelog-version">v1.0</span>
+            <span class="changelog-text">Lançamento inicial do Toshiro Bot.</span>
+          </li>
+        </ul>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    // ===== SIDEBAR ACTIVE LINK =====
+    document.querySelectorAll('.sidebar-link').forEach(link => {
+      link.addEventListener('click', function(e) {
+        document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+
+    // ===== FAQ TOGGLE =====
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !expanded);
+        this.closest('.faq-item').classList.toggle('open');
+      });
+    });
+
+    // ===== SEARCH =====
+    document.getElementById('search-input').addEventListener('input', function() {
+      const term = this.value.toLowerCase().trim();
+      const entries = document.querySelectorAll('.cmd-entry');
+
+      entries.forEach(entry => {
+        const text = entry.textContent.toLowerCase();
+        if (term === '' || text.includes(term)) {
+          entry.style.display = '';
+        } else {
+          entry.style.display = 'none';
+        }
+      });
+    });
+
+    // Atalho / para buscar
+    document.addEventListener('keydown', function(e) {
+      if (e.key === '/' && !['INPUT', 'TEXTAREA'].includes(e.target.tagName)) {
+        e.preventDefault();
+        document.getElementById('search-input').focus();
+      }
+    });
+  </script>
+</body>
+</html>
